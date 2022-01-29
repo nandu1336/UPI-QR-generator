@@ -1,5 +1,5 @@
 from pymongo import MongoClient
-from .config import DB_CONNECTION_STRING, DB_NAME
+from config import DB_CONNECTION_STRING, DB_NAME
 
 # import urllib.parse
 # DB_CONNECTION_STRING = f"mongodb+srv://{urllib.parse.quote('anandkulkarni91')}:{urllib.parse.quote('Anand@7097')}@cluster0.pvcf8.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"

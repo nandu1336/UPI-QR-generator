@@ -1,6 +1,6 @@
 from flask import Flask, request, Blueprint
-from . import auth
-from .auth import User
+import auth
+from auth import User
 
 app = Flask(__name__)
 

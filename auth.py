@@ -1,4 +1,4 @@
-from .db_api import db
+from db_api import db
 from datetime import datetime as dt
 
 class User:
