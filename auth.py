@@ -1,22 +1,5 @@
 from db_api import db
 from datetime import datetime as dt
-
-class User:
-    def __init__(self, fullname, merchant_name, primary_upi_id, user_id, password, finger_auth = False):
-        self.fullname = fullname 
-        self.merchant_name = merchant_name
-        self.primary_upi_id = primary_upi_id
-        self.user_id = user_id
-        self.password = password
-        self.finger_auth = finger_auth
-
-        self.set_datetime()
-
-    def set_datetime(self):
-        d = str(dt.now()).split(" ")
-        
-        self.registered_date = d[0]
-        self.registered_time = d[1]
         
 
 def is_user_already_registered(user):
