@@ -17,3 +17,4 @@ sniffio==1.2.0
 watchgod==0.7
 websockets==10.1
 Werkzeug==2.0.2
+gunicorn
