@@ -1,0 +1,24 @@
+type Transaction{
+    _id: String!
+    amount: String!
+    registered_date: datetime!
+    registered_time: datetime!
+    token: String!
+    traansacted_to: String!
+    transaction_date: datetime!
+    transaction_time: datetime!
+    transaction_id: String!
+    user_id: String!
+}
+
+
+type Users{
+    _id: String!
+    fullname: String!
+    merchant_name: String!
+    password: String!
+    primary_upi_id: String!
+    registered_date: String!
+    registered_time: String!
+    user_id: String!
+}

@@ -11,17 +11,27 @@ from config import DB_CONNECTION_STRING, DB_NAME
 client = MongoClient(DB_CONNECTION_STRING)
 db = client[DB_NAME]
 
-def get_profile_details(user_id):
-    res = db.users.find_one({"user_id": user_id})
-    print("res in get_profile-details:",res , type(res))
+def get_profile_details(k=None,v=None):
+    if not k: 
+        res = db.users.find({})
+        print("res in db_api: ",res)
+        # res['status'] = "Scuccess"
+        return dumps(res)
+    
+    res = db.users.find_one({k: v})
     res['status'] = "Success"
     return dumps(res)
 
 def get_transaction_details(t_id):
     return dumps(db.transactions.find({"transaction_id": t_id}))
 
-def get_all_transactions(user_id):
-    res = db.transactions.find({"user_id": user_id})
+def get_all_transactions(condition=None):
+
+    if not condition: 
+        res = db.transactions.find()
+    else:
+        # res = db.transactions.find({"user_id": user_id})
+        res = db.transactions.find(condition)
 
     return dumps({"status": "Success", "all_transactions": res})
 

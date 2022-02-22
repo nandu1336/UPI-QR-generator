@@ -43,7 +43,7 @@ def transaction():
         print("get transaction detailas called with transaction id: ", t_id)
         return db_api.get_transaction_details(t_id)
 
-    elif request.method == "POST":0
+    elif request.method == "POST":
         f = request.form
         t = Transaction(f['user_id'], f['token'], f['transacted_to'], f['transaction_id'], f['amount'])
         if db_api.store_transaction(t):
